@@ -14,7 +14,7 @@
 <ul>
 @foreach (Patient patient in Model)
 {
-  <li>@Html.ActionLink($"{patient.Name}", "Details", "Patients", new {id = patient.PatientId}, new { @class="btn-block" })</li>
+  <li>@Html.ActionLink($"{patient.Name}", "Details", "Patients", new {id = patient.PatientId})</li>
 }
 </ul>
 
