@@ -1,0 +1,30 @@
+@{
+  Layout = "_Layout";
+}
+
+@using DoctorOffice.Models;
+@model DoctorOffice.Models.Doctor;
+
+<h1>@Html.DisplayFor(model => model.Name)</h1>
+<h4>@Html.DisplayFor(model => model.Specialty) specialist</h4>
+<hr />
+@if (@Model.Patients.Count == 0)
+{
+  <h4>no patients found</h4>
+} else
+{
+  <h4>CURRENT PATIENTS</h4>
+  <ul>
+    @foreach (var join in Model.Patients)
+    {
+      <li><a href="/Patients/Details/@join.PatientId">@join.Doctor.Name</a></li>
+    }
+  </ul>
+}
+
+<div class="four-buttons">
+  @Html.ActionLink("ADD PATIENT", "Create", "Patients", null, new { @class="btn" })
+  @Html.ActionLink("VIEW ALL DOCTORS", "Index", "Doctors", null, new { @class = "btn" })
+  @Html.ActionLink("EDIT DETAILS", "Edit", "Doctors", new { id = Model.DoctorId }, new { @class = "btn" })
+  @Html.ActionLink("DELETE DOCTOR", "Delete", "Doctors", new { id = Model.DoctorId }, new { @class = "btn" })
+</div>
