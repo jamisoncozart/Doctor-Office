@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace DoctorOffice.Models
 {
@@ -11,7 +12,7 @@ namespace DoctorOffice.Models
 
     public int PatientId { get; set; }
     public string Name { get; set; }
-    public string DOB { get; set; }
+    public DateTime DOB { get; set; }
     public ICollection<DoctorPatient> Doctors { get; }
   }
 }
