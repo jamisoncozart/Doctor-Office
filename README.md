@@ -1,5 +1,5 @@
 # Doctor Office
-#### By **Jamison Cozart**, **Michelle Morin**, **Stephanie Podolak**, _March 23, 2020_
+#### By **Jamison Cozart**, **Michelle Morin**, **Stephanie Podolak**, March 23, 2020
 
 ASP.NET core MVC application using Entity Framework Core and MySQL for a Doctor Office website. Add new doctors and patients with relationships to eachother. Practice with many-to-many relationships and join tables.
 
@@ -63,7 +63,7 @@ _Enter the following commands in Terminal (macOS) or PowerShell (Windows):_
 * ``git clone`` followed by the name of this repository
 * ``cd DoctorOffice.Solution``
 
-_Confirm that you have navigated to the HairSalon.Solution directory (e.g., by entering the command_ ``pwd`` _in Terminal)._
+_Confirm that you have navigated to the DoctorOffice.Solution directory (e.g., by entering the command_ ``pwd`` _in Terminal)._
 
 _Recreate the ``doctor_office`` database using the following commands (in Terminal on macOS or PowerShell on Windows):_
 * ``dotnet ef migrations add Initial``
