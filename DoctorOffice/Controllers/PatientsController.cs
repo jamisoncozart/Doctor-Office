@@ -69,7 +69,7 @@ namespace DoctorOffice.Controllers
 
     public ActionResult AddDoctor(int id)
     {
-      Patient thisPatient = _db.Patients.FirstOrDefault(IRequestFormLimitsPolicy => IRequestFormLimitsPolicy.PatientId == id);
+      Patient thisPatient = _db.Patients.FirstOrDefault(patients => patients.PatientId == id);
       ViewBag.DoctorId = new SelectList(_db.Doctors, "DoctorId", "Name");
       return View(thisPatient);
     }
@@ -95,6 +95,11 @@ namespace DoctorOffice.Controllers
     public ActionResult DeleteConfirmed(int id)
     {
       Patient thisPatient = _db.Patients.FirstOrDefault(patients => patients.PatientId == id);
+      List<DoctorPatient> theseDoctorPatients = _db.DoctorPatient.Where(doctorPatient => doctorPatient.PatientId == id).ToList();
+      foreach(DoctorPatient dp in theseDoctorPatients)
+      {
+        _db.DoctorPatient.Remove(dp);
+      }
       _db.Patients.Remove(thisPatient);
       _db.SaveChanges();
       return RedirectToAction("Index");
