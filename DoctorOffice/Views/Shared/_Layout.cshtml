@@ -4,13 +4,26 @@
     <meta charset="utf-8">
     <title>Doctor's Office</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-    <link rel="stylesheet" href='~/css/styles.css'>
-    <link href="https://fonts.googleapis.com/css?family=Amiri&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+          @Html.ActionLink("Doctors", "Index", "Doctors", null, new { @class="nav-item nav-link" } )
+          @Html.ActionLink("Patients", "Index", "Patients", null, new { @class="nav-item nav-link" } )
+          <a class="nav-item nav-link" href="#">About</a>
+        </div>
+      </div>
+    </nav>
     <div class="container">
       @Html.Partial("Header")
-      @RenderBody()
+      <div class="render-body">
+        @RenderBody()
+      </div>
       @Html.Partial("Footer")
     </div>
   </body>
+</html>
