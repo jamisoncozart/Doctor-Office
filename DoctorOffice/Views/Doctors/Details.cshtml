@@ -17,7 +17,7 @@
   <ul>
     @foreach (var join in Model.Patients)
     {
-      <li><a href="/Patients/Details/@join.PatientId">@join.Doctor.Name</a></li>
+      <li><a href="/Patients/Details/@join.PatientId">@join.Patient.Name</a></li>
     }
   </ul>
 }
